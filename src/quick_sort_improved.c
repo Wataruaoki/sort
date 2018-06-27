@@ -24,13 +24,19 @@ void quick_sort(int A[], int n){
         A[i] = A[l];
         A[l] = z;
         l++;
+        i++;
       }
+      /* 帰納的にA[l-1] < pivot ,A[l] = pivotであるから
+       * swap(A[l],A[i])を行った後はA[i] = povot となるから
+       * i を 1 進めても良い
+       */
       else if(A[i] > pivot){
         int z = A[i];
         A[i] = A[r];
         A[r] = z;
         r--;
       }
+      // A[r] > pivot とは限らないので(特に初期値) i を1つ進めてはいけない
       else{
         i++;
       }

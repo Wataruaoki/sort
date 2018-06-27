@@ -28,7 +28,7 @@ else{
   A[j-1] = pivot;
   // pivot を適切な位置に戻す
 
-  quick_sort(A,j);
+  quick_sort(A,j-1);
   quick_sort(A+j,n-j);
 return;
 }
