@@ -28,6 +28,9 @@ else{
   A[j-1] = pivot;
   // pivot を適切な位置に戻す
 
+  /* A[j-1] = pivot が含まれていると無限ループを起こしうる(長さの和が減らない)ので
+  * A[0],A[1],...,A[j-2] と A[j], A[j+1],...,A[n-1] の 2箇所をソートし直す. 
+  */
   quick_sort(A,j-1);
   quick_sort(A+j,n-j);
 return;

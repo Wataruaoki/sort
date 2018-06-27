@@ -41,6 +41,10 @@ void quick_sort(int A[], int n){
         i++;
       }
     }
+  /* 作り方から k < l のとき A[k] < pivot
+   * l<= k <= r のとき, A[k] = pivot, k > r のとき A[k] > pivot なので
+   * A[0], A[1],...,A[l-1] と A[r+1], A[r+2],...,A[n-1] の 2箇所をソートし直す
+   */
   quick_sort(A,l);
   quick_sort(A+r+1,n-r-1);
   return;
